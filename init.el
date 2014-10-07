@@ -1,4 +1,6 @@
-; Setting for Twitter
+; Change key bind
+
+; Setting for Emacs twittering mode
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (require 'twittering-mode)
