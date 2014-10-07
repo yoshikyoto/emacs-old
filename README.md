@@ -2,9 +2,9 @@
 
 ## キーバインド設定
 
-(define-key <KEY_MAP> (kbd "<KEY>") '<COMMAND>) の形で設定  
+(define-key *KEY_MAP* (kbd "*KEY*") '*COMMAND*) の形で設定  
 例:  
-
+(
 
 ## 外部ツール・アドオン
 
