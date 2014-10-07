@@ -3,8 +3,9 @@
 ## キーバインド設定
 
 (define-key *KEY_MAP* (kbd "*KEY*") '*COMMAND*) の形で設定  
-例:  
-(
+例: ((上と下は同じ内容の設定となる)  
+`(define-key global-map (kbd "C-x C-y") 'foo)`
+`(define-key ctl-x-map (kbd "C-y") 'foo)'
 
 ## 外部ツール・アドオン
 
