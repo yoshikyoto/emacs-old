@@ -2,6 +2,9 @@
 
 ## キーバインド設定
 
+* リスト
+** リスト
+
 
 ## Emacs twittering mode
 
