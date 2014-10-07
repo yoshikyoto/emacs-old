@@ -3,7 +3,7 @@
 ## キーバインド設定
 
 * リスト  
-** リスト
+* リスト
 
 
 ## Emacs twittering mode
