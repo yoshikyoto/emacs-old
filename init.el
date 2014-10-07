@@ -1,4 +1,10 @@
 ; Change key bind
+; e.g. (define-key global-map (kbd "C-x C-y") 'foo)
+; (global-set-key (kbd "C-z") 'undo)
+
+; C-z を undo に、 susoend を C-t に変更
+(define-key global-map (kbd "C-z") 'undo)
+(define-key global-map (kbd "C-t") 'suspend-emacs)
 
 ; Setting for Emacs twittering mode
 
