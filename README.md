@@ -1,5 +1,8 @@
 # Emacs 設定ファイル
 
+## キーバインド設定
+
+
 ## Emacs twittering mode
 
 Emacs twttering mode が導入されています。  
