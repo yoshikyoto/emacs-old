@@ -2,6 +2,15 @@
 
 ## Emacs Lisp インストーラーの導入
 
+http://www.emacswiki.org/emacs/download/auto-install.el  
+から auto-install.el をダウンロード
+
+バイトコンパイルを行う  
+`emacs --batch -Q -f batch-byte-compile auto-install.el`
+
+設定ファイルに設定を追加  
+インターネットからパッケージを取得するため、起動に時間がかかる場合がある。
+
 ## キーバインド設定
 
 (define-key *KEY_MAP* (kbd "*KEY*") '*COMMAND*) の形で設定  
