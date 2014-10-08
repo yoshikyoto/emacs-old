@@ -4,7 +4,7 @@
 
 ### emacsclient の設定と使い方
 
-emacs.d への設定
+* emacs.d への設定
 
 
     (server-start)
