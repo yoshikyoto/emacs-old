@@ -2,6 +2,7 @@
 ; e.g. (define-key global-map (kbd "C-x C-y") 'foo)
 ; (global-set-key (kbd "C-z") 'undo)
 
+
 ; setting for emacsclient
 (server-start)
 (defun iconify-emacs-when-server-is-done ()
@@ -22,6 +23,10 @@
 ;(auto-install-compatibility-setup)
 ;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
+
+; キーバインドの設定
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ; C-z を undo に、 susoend を C-t に変更
 (define-key global-map (kbd "C-z") 'undo)
 (define-key global-map (kbd "C-t") 'suspend-emacs)
@@ -35,11 +40,24 @@
 (setq transient-mark-mode t)
 
 ; 見かけの行（折り返し）を含めたカーソル移動をする設定
-(require 'screen-lines)
-(add-hook 'text-mode-hook 'turn-on-screen-lines-mode)
+;(require 'screen-lines)
+;(add-hook 'text-mode-hook 'turn-on-screen-lines-mode)
+
+
+; 外部ツールに関する設定
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; setting for redo+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/redo"))
+(require 'redo+)
+(define-key global-map (kbd "C-M-z") 'redo)
+(setq undo-no-redo t)
+; set limit to undo and redo
+(setq undo-limit 600000)
+(setq undo-strong-limit 900000)
+
 
 ; Setting for Emacs twittering mode
-
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (require 'twittering-mode)
 (setq twittering-account-authorization 'authorized)

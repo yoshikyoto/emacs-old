@@ -68,15 +68,32 @@ transient-mark-mode を true にする。
 マーキングを解除する場合は `C-g` でいい。
 
 
-### 見かけの行でカーソルを移動する
-
-C-p や C-n でカーソル移動した場合、折り返しは一行と数えられないが、それを一行とするような turn-on-screen-mode を設定した。
 
 
 ## 外部ツール・アドオン
 インストール等して導入したもの
 
-### auto-save-buffers.el
+### redo
+
+* auto-install の場合  
+`M-x install-elisp-from-emacswili redo+.el`
+
+* バイトコンパイルの場合
+<http://www.emacswiki.org/emacs/download/redo%2b.el>
+
+今回は redo ディレクトリにこれが入っている。  
+auto-install を使った場合は redo+ ディレクトリに入ると思うので注意。
+
+`C-M-z` で redo できるように設定。
+
+
+### 見かけの行でカーソルを移動する
+
+C-p や C-n でカーソル移動した場合、折り返しは一行と数えられないが、それを一行とするような turn-on-screen-mode を設定することができる。  
+が、Emacs のバージョンアップにより？直感的な行移動ができるようになっている模様なのでこの設定は除去した。
+
+
+### auto-save-buffers.el (未設定)
 
 `M-x install-elisp http://homepage3.nifty.com/oatu/emacs/archives/auto-save-buffers.el`
 
@@ -88,3 +105,14 @@ Emacs twttering mode が導入されています。
 
 
 ## Future Works 
+
+参考図書: Emacs テクニックバイブル  
+p はこの図書におけるページ数を指す
+
+* キーバインドも更なる改善 (p73)
+  * C-h に関する設定
+* リモートのファイルにアクセスする (p103)
+* ローマ字での日本語インクリメンタルサーチ (p113)
+  * インクリメンタルサーチに関する設定 (p111) を先にした方がいいかも
+* カーソル行のハイライトに関する設定 (p116)
+* ファイル作成時のテンプレート挿入 (p122)
