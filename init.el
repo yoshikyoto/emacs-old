@@ -26,6 +26,10 @@
 (define-key global-map (kbd "C-z") 'undo)
 (define-key global-map (kbd "C-t") 'suspend-emacs)
 
+; setting for wdired.el ディレクトリ内のファイル編集
+(require 'wdired)
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
 ; Setting for Emacs twittering mode
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))

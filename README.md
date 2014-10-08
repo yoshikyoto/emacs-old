@@ -1,11 +1,12 @@
 # Emacs 設定ファイル
 
+bash の方の設定については <https://github.com/yoshikyoto/bb> を参照
+
 ## Emacs Client の設定など
 
 ### emacsclient の設定と使い方
 
-* emacs.d への設定
-
+emacs.d への設定
 
     (server-start)
     (defun iconify-emacs-when-server-is-done ()
@@ -53,7 +54,15 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
   * redo の設定も後にする
 
 
+## ディレクトリ内のファイルを編集できる wdired.el
+
+ディレクトリモードで r キーを押すとファイル名などを変更できる。  
+変更を反映させる場合は `C-c C-c` か `C-x C-s`  
+変更を破棄する場合は `C-x C-c`
+
+
 ## 外部ツール・アドオン
+インストール等して導入したもの
 
 ### auto-save-buffers.el
 
@@ -64,3 +73,6 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
 Emacs twttering mode が導入されています。  
 /lisp の中身が twittering-mode 関連の設定となります。  
 参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
+
+
+## Future Works 
