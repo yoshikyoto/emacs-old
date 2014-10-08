@@ -171,7 +171,9 @@ Emacs twttering mode が導入されています。
 このあたりもうちょっとどうにかしたい気がする。使わない場合コメントアウトしてください。  
 参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
 
-
+**使い方**
+_test_
+__test__
 
 
 ## メモ的なこと
