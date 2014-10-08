@@ -30,6 +30,10 @@
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
+; setting for transient mark mode
+; マークの範囲に色をつける
+(setq transient-mark-mode t)
+
 ; Setting for Emacs twittering mode
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
