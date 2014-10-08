@@ -65,6 +65,10 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+; Setting for w3m
+;(add-to-list 'load-path "~/.emacs.d/emacs-w3m")
+;(require 'w3m-load)
+
 ; Setting for Emacs twittering mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/twittering-mode"))
 (require 'twittering-mode)

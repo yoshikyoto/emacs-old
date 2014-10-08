@@ -128,17 +128,23 @@ C-p や C-n でカーソル移動した場合、折り返しは一行と数え�
 `M-x install-elisp http://homepage3.nifty.com/oatu/emacs/archives/auto-save-buffers.el`
 
 
+### Emacs で Web ブラウザを使う w3m
+
+* TODO: Future Work
+
 
 ### Emacs twittering mode
 
 Emacs twttering mode が導入されています。  
-/lisp の中身が twittering-mode 関連の設定となります。  
+/lisp の中身が twittering-mode 関連のファイルとなります。  
+ユーザーの設定が twittering-mode-config.el に記述してある。(gitignored)
+このあたりもうちょっとどうにかしたい気がする。  
 参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
 
 
 
 
-## Future Works 
+## メモ的なこと
 
 実装しておくと便利かもと思ったけど、優先度の問題から後回しにしていることとか。
 
@@ -157,3 +163,6 @@ p はこの図書におけるページ数を指す
   * 正規表現にマッチする部分がリアルタイムでハイライトしてくれる？
 * grep検索結果を編集する (p163)
 * follow-mode (p170)
+  * `M-x follow-mode` で follow-mode に
+  * 長いコードとかを二行に表示できる。
+  * 画面分割してかつ follow-mode にするには `M-x follow-delete-other-windows-and-split`
