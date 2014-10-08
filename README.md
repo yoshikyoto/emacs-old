@@ -133,12 +133,42 @@ C-p や C-n でカーソル移動した場合、折り返しは一行と数え�
 * TODO: Future Work
 
 
+### gist
+
+Emacs から Gist を使えるようにする。  
+GitHub から gist.el を clone する。  
+<https://github.com/defunkt/gist.el>
+
+関連ライブラリも設定する必要がある  
+以下のものを clone する。
+
+* pache <https://github.com/sigma/pcache>
+* logito <https://github.com/sigma/logito>
+* (Emacs 24 の場合は不要) tabulated-list.el <https://github.com/sigma/tabulated-list.el>
+* gh.el <https://github.com/sigma/gh.el>
+
+clone したものは tabulated-list.el 以外すべて含まれている。
+
+使い方
+
+* M-x gist-buffer  
+username, password の入力を求められて、開いているファイルのgistを作成する。
+* M-x gist-biffer-private  
+private で作成する場合
+* M-x gist-region  
+マーカーで選択した部分だけ
+* M-x gist-region-private
+* M-x gist-fetch  
+Gist ID の入力を求められ、Gistのコードをダウンロードして表示する。
+  * Gist ID とは、http://gist.github.com/XXXXX.txt の XXXXX の部分
+
+
 ### Emacs twittering mode
 
 Emacs twttering mode が導入されています。  
 /lisp の中身が twittering-mode 関連のファイルとなります。  
 ユーザーの設定が twittering-mode-config.el に記述してある。(gitignored)
-このあたりもうちょっとどうにかしたい気がする。  
+このあたりもうちょっとどうにかしたい気がする。使わない場合コメントアウトしてください。  
 参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
 
 

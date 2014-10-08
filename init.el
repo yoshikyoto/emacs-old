@@ -69,6 +69,18 @@
 ;(add-to-list 'load-path "~/.emacs.d/emacs-w3m")
 ;(require 'w3m-load)
 
+; Setting for gist;
+; lib
+(add-to-list 'load-path "~/.emacs.d/pcache")
+(require 'pcache)
+(add-to-list 'load-path "~/.emacs.d/logito")
+(require 'logito)
+(add-to-list 'load-path "~/.emacs.d/gh.el")
+(require 'gh)
+; for gist
+(add-to-list 'load-path "~/.emacs.d/gist.el")
+(require 'gist)
+
 ; Setting for Emacs twittering mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/twittering-mode"))
 (require 'twittering-mode)
