@@ -4,7 +4,8 @@
 
 ### emacsclient の設定と使い方
 
-* emacs.d への設定  
+* emacs.d への設定
+
     (server-start)
     (defun iconify-emacs-when-server-is-done ()
       (unless serber-client (iconify-frame)))
