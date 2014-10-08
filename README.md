@@ -53,6 +53,14 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
   * undo は C-/ にも設定されている
   * redo の設定も後にする
 
+
+### 5行単位で移動するキーバインド
+
+* M-n で5行次の行に移動するように設定
+* M-p で5行前の行に移動するように設定
+
+
+
 ## Emacs デフォルトの設定に関する変更
 
 ### ディレクトリ内のファイルを編集できる wdired.el
@@ -87,21 +95,46 @@ auto-install を使った場合は redo+ ディレクトリに入ると思うの
 `C-M-z` で redo できるように設定。
 
 
+### auto complete
+
+* auto-install を使う場合  
+`M-x auto-install-batch auto-complete TAB`
+
+* 以下、バイトコンパイルする場合  
+現在 git でオープンな開発をしているらしい。  
+リポジトリ: <https://github.com/auto-complete/auto-complete>  
+参考: <http://qiita.com/ironsand/items/4a41ad24796457ccd8e6>
+
+`git clone https://github.com/auto-complete/auto-complete`  
+popup も必要らしいので、そちらも clone  
+`git clone https://github.com/auto-complete/popup-el.git`  
+それぞれ auto-complete, popup-el に入っている。
+
+loadpathに auto-complete と popup-el ディレクトリを追加して、  
+`(require 'auto-complete-config)` と `(ac-config-default)` を設定すれば良い。  
+
+
+
 ### 見かけの行でカーソルを移動する
 
 C-p や C-n でカーソル移動した場合、折り返しは一行と数えられないが、それを一行とするような turn-on-screen-mode を設定することができる。  
 が、Emacs のバージョンアップにより？直感的な行移動ができるようになっている模様なのでこの設定は除去した。
 
 
+
 ### auto-save-buffers.el (未設定)
 
 `M-x install-elisp http://homepage3.nifty.com/oatu/emacs/archives/auto-save-buffers.el`
+
+
 
 ### Emacs twittering mode
 
 Emacs twttering mode が導入されています。  
 /lisp の中身が twittering-mode 関連の設定となります。  
 参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
+
+
 
 
 ## Future Works 
@@ -116,3 +149,4 @@ p はこの図書におけるページ数を指す
   * インクリメンタルサーチに関する設定 (p111) を先にした方がいいかも
 * カーソル行のハイライトに関する設定 (p116)
 * ファイル作成時のテンプレート挿入 (p122)
+* 矩形を選択しやすくする (p124)

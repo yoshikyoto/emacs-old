@@ -2,7 +2,6 @@
 ; e.g. (define-key global-map (kbd "C-x C-y") 'foo)
 ; (global-set-key (kbd "C-z") 'undo)
 
-
 ; setting for emacsclient
 (server-start)
 (defun iconify-emacs-when-server-is-done ()
@@ -31,6 +30,10 @@
 (define-key global-map (kbd "C-z") 'undo)
 (define-key global-map (kbd "C-t") 'suspend-emacs)
 
+; M-x, M-p で 5行移動できるように設定
+(define-key global-map (kbd "M-n") (kbd "C-u 5 C-n"))
+(define-key global-map (kbd "M-p") (kbd "C-u 5 C-p"))
+
 ; setting for wdired.el ディレクトリ内のファイル編集
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
@@ -56,6 +59,11 @@
 (setq undo-limit 600000)
 (setq undo-strong-limit 900000)
 
+; setting for auto-complete
+(add-to-list 'load-path "~/.emacs.d/popup-el")
+(add-to-list 'load-path "~/.emacs.d/auto-complete")
+(require 'auto-complete-config)
+(ac-config-default)
 
 ; Setting for Emacs twittering mode
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
