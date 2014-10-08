@@ -1,15 +1,40 @@
 # Emacs 設定ファイル
 
+## Emacs Client の設定など
+
+### emacsclient の設定と使い方
+
+* emacs.d への設定  
+    (server-start)
+    (defun iconify-emacs-when-server-is-done ()
+      (unless serber-client (iconify-frame)))
+
+* あらかじめ Emacs を daemon で起動しておきます  
+`emacs --daemon`  
+* 以降 Emacs を起動するときは以下の要に起動します。  
+`emacsclient *ファイル名*`
+
+### C-x C-c に関する設定
+
+本来の C-x C-c で終了してしまうと、emacsclient で起動できなくなってしまうので  
+* C-x C-c では emacs を kill しないように設定
+* save-buffers-kill-emacs (本来のC-x C-c) は M-x exit で実行できるようにします
+  * 設定を反映させるにはこちらを利用
+
 ## Emacs Lisp インストーラーの導入
 
-http://www.emacswiki.org/emacs/download/auto-install.el  
+auto-install について: http://www.emacswiki.org/emacs/AutoInstall
+
+* http://www.emacswiki.org/emacs/download/auto-install.el  
 から auto-install.el をダウンロード
 
-バイトコンパイルを行う  
+* バイトコンパイルを行う  
 `emacs --batch -Q -f batch-byte-compile auto-install.el`
 
-設定ファイルに設定を追加  
+* 設定ファイルに設定を追加  
 インターネットからパッケージを取得するため、起動に時間がかかる場合がある。
+
+* **Emacs のカスタマイズ等するとき以外は不要？普段はコメントアウトしてこの機能は切っています**
 
 ## キーバインド設定
 
