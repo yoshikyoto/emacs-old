@@ -53,7 +53,7 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
   * undo は C-/ にも設定されている
   * redo の設定も後にする
 
-## Emacs デフォルトの設定の変更
+## Emacs デフォルトの設定に関する変更
 
 ### ディレクトリ内のファイルを編集できる wdired.el
 
@@ -66,6 +66,12 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
 `C-@` でマーキングされた位置から現在のカーソルの位置までのマーキングに色をつける
 transient-mark-mode を true にする。  
 マーキングを解除する場合は `C-g` でいい。
+
+
+### 見かけの行でカーソルを移動する
+
+C-p や C-n でカーソル移動した場合、折り返しは一行と数えられないが、それを一行とするような turn-on-screen-mode を設定した。
+
 
 ## 外部ツール・アドオン
 インストール等して導入したもの

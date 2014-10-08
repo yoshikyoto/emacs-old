@@ -34,6 +34,10 @@
 ; マークの範囲に色をつける
 (setq transient-mark-mode t)
 
+; 見かけの行（折り返し）を含めたカーソル移動をする設定
+(require 'screen-lines)
+(add-hook 'text-mode-hook 'turn-on-screen-lines-mode)
+
 ; Setting for Emacs twittering mode
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
