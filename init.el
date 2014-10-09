@@ -23,6 +23,7 @@
 ;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 
+
 ; キーバインドの設定
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -41,6 +42,12 @@
 ; setting for transient mark mode
 ; マークの範囲に色をつける
 (setq transient-mark-mode t)
+
+;cua-mode
+(cua-mode t)
+(setq cua-enable-cua-keys nil) ; 不要なキーバインドは使わない
+; Spaec にキーバインドを
+(define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 
 ; 見かけの行（折り返し）を含めたカーソル移動をする設定
 ;(require 'screen-lines)

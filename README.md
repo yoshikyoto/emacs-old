@@ -71,6 +71,7 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
 変更を反映させる場合は `C-c C-c` か `C-x C-s`  
 変更を破棄する場合は `C-x C-c`
 
+
 ### マークからの選択範囲に色をつける
 
 `C-@` でマーキングされた位置から現在のカーソルの位置までのマーキングに色をつける
@@ -78,6 +79,13 @@ transient-mark-mode を true にする。
 マーキングを解除する場合は `C-g` でいい。
 
 
+### 矩形を選択しやすくする sense-region
+
+sense-region.el を使わなくても、標準で cua-mode というのを使えばできる模様。  
+`(cua-mode t)` とすればいい。詳しくは設定ファイルで。
+
+`C-x SPC` C-x (スペース) で矩形選択を行う。  
+Emacs のコピーは ESC-w
 
 
 ## 外部ツール・アドオン
@@ -114,6 +122,7 @@ popup も必要らしいので、そちらも clone
 
 loadpathに auto-complete と popup-el ディレクトリを追加して、  
 `(require 'auto-complete-config)` と `(ac-config-default)` を設定すれば良い。  
+
 
 
 
@@ -231,13 +240,14 @@ Emacs twttering mode が導入されています。
 p はこの図書におけるページ数を指す
 
 * キーバインドも更なる改善 (p73)
-  * C-h に関する設定
-* リモートのファイルにアクセスする (p103)
-* ローマ字での日本語インクリメンタルサーチ (p113)
-  * インクリメンタルサーチに関する設定 (p111) を先にした方がいいかも
-* カーソル行のハイライトに関する設定 (p116)
+  * C-h に関する設定など
+* tramp リモートのファイルにアクセスする (p103)
+  * `C-x C-f` で `/METHOD:USERNAME@HOSTNAME:FILENAME` とすることでリモートのファイルを編集できる。  
+例: `C-x C-f /ssh:user@utakatanet.dip.jp:test.txt`
+  * root権限で編集する場合は、METHOD を sudo とする
+* migemo.el ローマ字での日本語インクリメンタルサーチ (p113)
+* em.el カーソル行のハイライトに関する設定 (p116)
 * ファイル作成時のテンプレート挿入 (p122)
-* 矩形を選択しやすくする (p124)
 * 正規表現を対話的に作成する (p148)
   * 正規表現にマッチする部分がリアルタイムでハイライトしてくれる？
 * grep検索結果を編集する (p163)
