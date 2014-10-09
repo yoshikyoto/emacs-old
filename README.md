@@ -149,7 +149,7 @@ GitHub から gist.el を clone する。
 
 clone したものは tabulated-list.el 以外すべて含まれている。
 
-使い方
+**使い方**
 
 * M-x gist-buffer  
 username, password の入力を求められて、開いているファイルのgistを作成する。
@@ -172,8 +172,25 @@ Emacs twttering mode が導入されています。
 参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
 
 **使い方**
-_test_
-__test__
+
+* `M-x twit` で twittering-mode へ
+* `C-c C-f` twittering-friends-timeline フレンドタイムラインを表示
+* `C-c C-r` twittering-replies-timeline 自分へのリプライを表示
+* `C-c C-u` twittering-user-timeline 自分自身のユーザータイムラインを表示
+* `C-c C-d` twittering-direct-messages-timeline DMを表示
+* `L` twittering-other-user-list-interactive リストを表示
+* `C-c C-q` twittering-search 検索
+* `f` twittering-switch-to-next-timeline 次のバッファへ
+* `b` twittering-switch-to-previous-timeline 前のバッファへ
+* `u` twittering-update-status-intaractive つぶやく
+* `RET` twittering-enter 返信/URLにジャンプ
+* `g` twittering-current-timeline タイムラインを更新する
+* `n` twittering-goto-next-status-of-user そのユーザーの次のつぶやきに移動
+* `p` twittering-goto-previous-status-of-user そのユーザーの前のつぶやきに移動
+
+* twittering-status-format 変数でタイムラインの表示フォーマットの変更が可能
+
+* F4 で短縮URLに
 
 
 ## メモ的なこと
