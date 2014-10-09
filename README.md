@@ -14,9 +14,10 @@ emacs.d への設定
 
 * あらかじめ Emacs を daemon で起動しておきます  
 `emacs --daemon`  
-* 以降 Emacs を起動するときは以下の要に起動します。  
+* 以降 Emacs を起動するときは以下のように起動します。  
 `emacsclient -t *ファイル名*`
   * -t は -nw と同じ。これをしないとうまく日本語入力できない。
+* TODO: daemon を kill したい場合は？
 
 ### C-x C-c に関する設定
 
@@ -133,6 +134,14 @@ C-p や C-n でカーソル移動した場合、折り返しは一行と数え�
 * TODO: Future Work
 
 
+### Mew
+
+GitHub から clone します: <https://github.com/kazu-yamamoto/Mew>
+
+`M-x mew` で起動します。
+
+
+
 ### gist
 
 Emacs から Gist を使えるようにする。  
@@ -163,13 +172,15 @@ Gist ID の入力を求められ、Gistのコードをダウンロードして�
   * Gist ID とは、http://gist.github.com/XXXXX.txt の XXXXX の部分
 
 
+
 ### Emacs twittering mode
 
 Emacs twttering mode が導入されています。  
 /lisp の中身が twittering-mode 関連のファイルとなります。  
 ユーザーの設定が twittering-mode-config.el に記述してある。(gitignored)
 このあたりもうちょっとどうにかしたい気がする。使わない場合コメントアウトしてください。  
-参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)
+参考: [EmacsでTwitterできるようにする](http://blog.k-sakabe.com/?p=4894)  
+[Emacs Wiki](http://www.emacswiki.org/emacs/TwitteringMode-ja)
 
 **使い方**
 
@@ -191,8 +202,25 @@ Emacs twttering mode が導入されています。
 * twittering-status-format 変数でタイムラインの表示フォーマットの変更が可能
   * `(setq twittring-status-format "%i %s, %@:\n %t // from %f%L")` のように指定可能
   * %s スクリーンネーム
+  * %S 名前
+  * %i アイコン
+  * %d user description
+  * %l location
+  * %L " [location]"
+  * %u url
+  * %j user.id
+  * %p 鍵かどうか
+  * %c ユーザー登録日時
+  * %@ 〜秒前
+  * %t 本文
+  * %f クライアント
+  * %# tweet id
 
 * F4 で短縮URLに
+
+* CUI でアイコンを表示させることはできるのか
+
+
 
 
 ## メモ的なこと

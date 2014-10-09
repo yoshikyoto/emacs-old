@@ -69,6 +69,11 @@
 ;(add-to-list 'load-path "~/.emacs.d/emacs-w3m")
 ;(require 'w3m-load)
 
+; Setting for mew
+(add-to-list 'load-path "~/.emacs.d/Mew")
+(autoload 'mew "mew" nil t)
+(autoload 'mew-send "mew" nil t)
+
 ; Setting for gist;
 ; lib
 (add-to-list 'load-path "~/.emacs.d/pcache")
