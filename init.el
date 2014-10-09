@@ -72,6 +72,10 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+; grep-edit
+(add-to-list 'load-path "~/.emacs.d/grep-edit")
+(require 'grep-edit)
+
 ; Setting for w3m
 ;(add-to-list 'load-path "~/.emacs.d/emacs-w3m")
 ;(require 'w3m-load)

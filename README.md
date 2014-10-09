@@ -124,6 +124,14 @@ loadpathに auto-complete と popup-el ディレクトリを追加して、
 `(require 'auto-complete-config)` と `(ac-config-default)` を設定すれば良い。  
 
 
+### grep-edit
+
+`M-x grep` で grep が使える。  
+ここで編集が行えるようにする。
+
+* auto-install を使うなら `M-x install-elisp-from-emacswiki grep-edit.el`
+* Emacs Wiki なら <http://www.emacswiki.org/emacs-en/download/grep-edit.el>
+* 動作確認まだしてない (p159)
 
 
 ### 見かけの行でカーソルを移動する
@@ -250,7 +258,7 @@ p はこの図書におけるページ数を指す
 * ファイル作成時のテンプレート挿入 (p122)
 * 正規表現を対話的に作成する (p148)
   * 正規表現にマッチする部分がリアルタイムでハイライトしてくれる？
-* grep検索結果を編集する (p163)
+  * `M-x re-builder`
 * follow-mode (p170)
   * `M-x follow-mode` で follow-mode に
   * 長いコードとかを二行に表示できる。
