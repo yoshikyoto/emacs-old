@@ -189,6 +189,8 @@ Emacs twttering mode が導入されています。
 * `p` twittering-goto-previous-status-of-user そのユーザーの前のつぶやきに移動
 
 * twittering-status-format 変数でタイムラインの表示フォーマットの変更が可能
+  * `(setq twittring-status-format "%i %s, %@:\n %t // from %f%L")` のように指定可能
+  * %s スクリーンネーム
 
 * F4 で短縮URLに
 
