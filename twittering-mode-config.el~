@@ -5,6 +5,6 @@
  ("user_id" . "83811178")
  ("screen_name" . "yoshiki_utakata")))
 
-(setq twittering-status-format "%S (%s):%t [%@] \n")
+; (setq twittering-status-format "%S(%s): %t [%@] \n")
 (setq twittering-icon-mode t)
 (add-to-list 'exec-path "/usr/local/bin")

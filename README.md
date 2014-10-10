@@ -5,19 +5,15 @@ bash の方の設定については <https://github.com/yoshikyoto/bb> を参照
 ## Emacs Client の設定など
 
 ### emacsclient の設定と使い方
-
-emacs.d への設定
-
-    (server-start)
-    (defun iconify-emacs-when-server-is-done ()
-      (unless serber-client (iconify-frame)))
+Emacs 23 以降の設定です。
 
 * あらかじめ Emacs を daemon で起動しておきます  
 `emacs --daemon`  
 * 以降 Emacs を起動するときは以下のように起動します。  
 `emacsclient -t *ファイル名*`
   * -t は -nw と同じ。これをしないとうまく日本語入力できない。
-* TODO: daemon を kill したい場合は？
+  * 僕の場合は .bashrc で `alias e='emacsclient -t'` としています。
+* Emacs を kill したい場合は、Emacs で `M-x kill-emacs` を実行します。
 
 ### C-x C-c に関する設定
 

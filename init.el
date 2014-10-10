@@ -2,15 +2,16 @@
 ; e.g. (define-key global-map (kbd "C-x C-y") 'foo)
 ; (global-set-key (kbd "C-z") 'undo)
 
-; setting for emacsclient
-(server-start)
-(defun iconify-emacs-when-server-is-done ()
-  (unless serber-client (iconify-frame)))
+
+; setting for emacsclient Emacs 23 以降は不要なのでこの設定は削除しました
+;(server-start)
+;(defun iconify-emacs-when-server-is-done ()
+;  (unless serber-client (iconify-frame)))
 ; 終了時にemacsをアイコン化する設定
 ; ここは好みに応じて設定する
-(add-hook 'server-done-hook　'iconify-emacs-when-server-is-done)
+;(add-hook 'server-done-hook　'iconify-emacs-when-server-is-done)
 ; C-x C-c に割り当てる
-(define-key global-map (kbd "C-x C-x") 'server-edit)
+;(define-key global-map (kbd "C-x C-c") 'server-edit)
 ; M-x exit に本来の C-x C-c の終了を割り当てる
 (defalias 'exit 'save-buffers-kill-emacs)
 

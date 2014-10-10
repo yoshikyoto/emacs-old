@@ -3,6 +3,35 @@
 (gh-cache "gh/gh-gist-api/yoshikyoto"
   :file "yoshikyoto"
   :version "gh-0.2"
-  :entries #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data ())
-  :timestamp 1412811587.436139
+  :entries #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8 data (("/gists/390aa19e3779b15124a9" "GET" "6a707f0f53e06481008f5c5f75d5d0f5e24b51ef") [object gh-cache-entry "gh-cache-entry" 1412825759.372358 nil [object gh-gist-gist "gh-gist-gist" ([object gh-gist-gist-file "gh-gist-gist-file" "paiza_kirishima.cpp" 562 "https://gist.githubusercontent.com/yoshikyoto/390aa19e3779b15124a9/raw/cc922c702ec4624d7a72d25fc69adfd6f05c3edd/paiza_kirishima.cpp" "#include <iostream>
+using namespace std;
+
+int dp[200001];
+int m;
+
+int main(int argc, const char * argv[]){
+    cin >> m;
+    
+    int n;
+    cin >> n;
+    
+    dp[0] = 0;
+    for(int i = 1; i <= m; i++)
+        dp[i] = 300000000;
+    
+    for(int i = 0; i < n; i++){
+        int q, r; // q人 r円
+        cin >> q >> r;
+        
+        for(int j = m; j > q; j--){
+            int c = dp[j-q] + r;
+            if(c < dp[j]) dp[j] = c;
+        }
+        
+        for(int j = 1; j <= q; j++)
+            if(r < dp[j]) dp[j] = r;
+    }
+    cout << dp[m] << endl;
+}"]) t "" "2014-08-25T04:18:24Z" "2014-08-25T04:18:25Z" "https://gist.github.com/390aa19e3779b15124a9.git" "https://gist.github.com/390aa19e3779b15124a9.git" "https://gist.github.com/390aa19e3779b15124a9" 0 unbound "390aa19e3779b15124a9" "https://api.github.com/gists/390aa19e3779b15124a9" (((url . "https://api.github.com/gists/390aa19e3779b15124a9/f264535e352217d3c501b50c6bf9788e69884ec6") (change_status (deletions . 0) (additions . 30) (total . 30)) (committed_at . "2014-08-25T04:18:24Z") (version . "f264535e352217d3c501b50c6bf9788e69884ec6") (user (site_admin . :json-false) (type . "User") (received_events_url . "https://api.github.com/users/yoshikyoto/received_events") (events_url . "https://api.github.com/users/yoshikyoto/events{/privacy}") (repos_url . "https://api.github.com/users/yoshikyoto/repos") (organizations_url . "https://api.github.com/users/yoshikyoto/orgs") (subscriptions_url . "https://api.github.com/users/yoshikyoto/subscriptions") (starred_url . "https://api.github.com/users/yoshikyoto/starred{/owner}{/repo}") (gists_url . "https://api.github.com/users/yoshikyoto/gists{/gist_id}") (following_url . "https://api.github.com/users/yoshikyoto/following{/other_user}") (followers_url . "https://api.github.com/users/yoshikyoto/followers") (html_url . "https://github.com/yoshikyoto") (url . "https://api.github.com/users/yoshikyoto") (gravatar_id . "") (avatar_url . "https://avatars.githubusercontent.com/u/5354310?v=2") (id . 5354310) (login . "yoshikyoto")))) nil] "\"4f5a46c2b4821be7a3a7b63d3dae9a56\"" nil]))
+  :timestamp 1412932867.128436
   )
