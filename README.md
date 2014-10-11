@@ -15,6 +15,9 @@ Emacs 23 以降の設定です。
   * 僕の場合は .bashrc で `alias e='emacsclient -t'` としています。
 * Emacs を kill したい場合は、Emacs で `M-x kill-emacs` を実行します。
 
+* `M-x exit` に save-buffers-kill-emacs
+* `M-x kill` に kill-emacs　を割り当ててます。
+
 ### C-x C-c に関する設定
 
 本来の C-x C-c で終了してしまうと、emacsclient で起動できなくなってしまうので  
@@ -45,7 +48,7 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
 `(define-key ctl-x-map (kbd "C-y") 'foo)`
 
 ### C-z に関する変更
-* C-z に設定されていた suspend-emacs を C-t に移動
+* C-z に設定されていた suspend-frame を C-t に移動
   * C-t はもともと、前後の文字を入れ替える transpose-chars が設定されていた
 * 代わりに C-z には undo を設定
   * undo は C-/ にも設定されている
@@ -57,6 +60,11 @@ auto-install について: http://www.emacswiki.org/emacs/AutoInstall
 * M-n で5行次の行に移動するように設定
 * M-p で5行前の行に移動するように設定
 
+
+
+### C-h に other-window を割当て
+
+本来 C-h はヘルプとマニュアルに関するコマンドだが、ほぼ使わないので、C-x o に割り当てられていた othe-window を割り当てた。
 
 
 ## Emacs デフォルトの設定に関する変更

@@ -14,6 +14,7 @@
 ;(define-key global-map (kbd "C-x C-c") 'server-edit)
 ; M-x exit に本来の C-x C-c の終了を割り当てる
 (defalias 'exit 'save-buffers-kill-emacs)
+(defalias 'kill 'kill-emacs)
 
 ; setting for auto-install.el
 ;(add-to-list 'load-path "/.emacs.d/auto-install/")
@@ -30,11 +31,14 @@
 
 ; C-z を undo に、 susoend を C-t に変更
 (define-key global-map (kbd "C-z") 'undo)
-(define-key global-map (kbd "C-t") 'suspend-emacs)
+(define-key global-map (kbd "C-t") 'suspend-frame)
 
 ; M-x, M-p で 5行移動できるように設定
 (define-key global-map (kbd "M-n") (kbd "C-u 5 C-n"))
 (define-key global-map (kbd "M-p") (kbd "C-u 5 C-p"))
+
+; C-h はもともとヘルプ関係のコマンドだが、これに C-x o の other-window をバインド
+(define-key global-map (kbd "C-h") 'other-window)
 
 ; setting for wdired.el ディレクトリ内のファイル編集
 (require 'wdired)
@@ -44,13 +48,14 @@
 ; マークの範囲に色をつける
 (setq transient-mark-mode t)
 
-;cua-mode
+;cua-mode 矩形選択
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ; 不要なキーバインドは使わない
-; Spaec にキーバインドを
+; Spaec に矩形選択のキーバインドを
 (define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 
 ; 見かけの行（折り返し）を含めたカーソル移動をする設定
+; Emacs のバージョンアップにより必要なくなった？ので削除
 ;(require 'screen-lines)
 ;(add-hook 'text-mode-hook 'turn-on-screen-lines-mode)
 
@@ -86,8 +91,8 @@
 (autoload 'mew "mew" nil t)
 (autoload 'mew-send "mew" nil t)
 
-; Setting for gist;
-; lib
+; Setting for gist
+; まずは各種依存関係ファイル
 (add-to-list 'load-path "~/.emacs.d/pcache")
 (require 'pcache)
 (add-to-list 'load-path "~/.emacs.d/logito")
