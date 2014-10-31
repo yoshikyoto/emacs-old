@@ -7,9 +7,6 @@
 
 ; hilight
 (global-hl-line-mode t) 
-(custom-set-faces
-'(hl-line ((t (:background "color-236"))))
-)
 
 ; setting for emacsclient Emacs 23 以降は不要なのでこの設定は削除しました
 ;(server-start)
