@@ -1,17 +1,17 @@
-; Change key bind
-; e.g. (define-key global-map (kbd "C-x C-y") 'foo)
+; キーバインドの変更方法の例
+; (define-key global-map (kbd "C-x C-y") 'foo)
 ; (global-set-key (kbd "C-z") 'undo)
 
-; liner-mode
+; 行番号が表示されるが、少し見づらいので切ってある
 ; (global-linum-mode t)
 
-; hilight
+; 行のハイライトを有効にして色を指定
 (global-hl-line-mode t) 
 (custom-set-faces
 '(hl-line ((t (:background "color-236"))))
 )
 
-; setting for emacsclient Emacs 23 以降は不要なのでこの設定は削除しました
+; setting for emacsclient Emacs 23 以降は不要っぽい？
 ;(server-start)
 ;(defun iconify-emacs-when-server-is-done ()
 ;  (unless serber-client (iconify-frame)))
@@ -24,7 +24,7 @@
 (defalias 'exit 'save-buffers-kill-emacs)
 (defalias 'kill 'kill-emacs)
 
-; setting for auto-install.el
+; auto-install の設定。ネットにつなげない環境では使わない方がいい。
 ;(add-to-list 'load-path "/.emacs.d/auto-install/")
 ;(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install/"))
 ;(require 'auto-install)
@@ -48,7 +48,7 @@
 ; C-h はもともとヘルプ関係のコマンドだが、これに C-x o の other-window をバインド
 (define-key global-map (kbd "C-h") 'other-window)
 
-; setting for wdired.el ディレクトリ内のファイル編集
+; ディレクトリ閲覧中にファイル編集とかできる wdired モード
 (require 'wdired)
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
@@ -56,10 +56,10 @@
 ; マークの範囲に色をつける
 (setq transient-mark-mode t)
 
-;cua-mode 矩形選択
+; 矩形選択
 (cua-mode t)
 (setq cua-enable-cua-keys nil) ; 不要なキーバインドは使わない
-; Spaec に矩形選択のキーバインドを
+; C-x Space に矩形選択のキーバインドを
 (define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 
 ; 見かけの行（折り返し）を含めたカーソル移動をする設定
@@ -71,33 +71,28 @@
 ; 外部ツールに関する設定
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; setting for redo+
+; C-M-z で Redo するための設定
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/redo"))
 (require 'redo+)
 (define-key global-map (kbd "C-M-z") 'redo)
 (setq undo-no-redo t)
-; set limit to undo and redo
+; 一応redo回数の上限を設定しておかないと、重くなることがある
 (setq undo-limit 600000)
 (setq undo-strong-limit 900000)
 
-; setting for auto-complete
+; auto-completeの設定
 (add-to-list 'load-path "~/.emacs.d/popup-el")
 (add-to-list 'load-path "~/.emacs.d/auto-complete")
 (require 'auto-complete-config)
 (ac-config-default)
 
-; grep-edit
+; grep-edit を導入したけどいまいちよく分かってない
 (add-to-list 'load-path "~/.emacs.d/grep-edit")
 (require 'grep-edit)
 
 ; Setting for w3m
 ;(add-to-list 'load-path "~/.emacs.d/emacs-w3m")
 ;(require 'w3m-load)
-
-; Setting for mew
-(add-to-list 'load-path "~/.emacs.d/Mew")
-(autoload 'mew "mew" nil t)
-(autoload 'mew-send "mew" nil t)
 
 ; Setting for gist
 ; まずは各種依存関係ファイル
